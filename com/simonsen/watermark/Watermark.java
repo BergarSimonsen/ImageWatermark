@@ -9,6 +9,7 @@ import java.awt.Color;
 import com.simonsen.watermark.io.*;
 import com.simonsen.watermark.controller.*;
 import com.simonsen.watermark.model.*;
+import com.simonsen.watermark.log.*;
 
 public class Watermark {
     private static IO io;
@@ -22,6 +23,8 @@ public class Watermark {
 
     public static void main(String args[]) {
 	try {
+
+	    Logger.logInfo("Starting main");
 
 	    pwd = new File( "" ).getCanonicalFile();
 	    ic = new ImageController(  );
@@ -39,6 +42,7 @@ public class Watermark {
 	    }
 	} catch ( IOException e ) {
 	    e.printStackTrace();
+	    System.err.println(e);
 	}
     }
 
